@@ -26,4 +26,6 @@ public record Assignment
     public required string Name { get; init; }
     public required string Description { get; init; }
     public required string Comment { get; init; }
+    public required bool IsFavorite { get; init; }
+    public required DateTimeOffset CreatedAt { get; init; }
 }
