@@ -19,9 +19,9 @@ CREATE TABLE IF NOT EXISTS time_trackers.time_trackers
     id            UUID PRIMARY KEY     DEFAULT gen_random_uuid(),
     assignment_id UUID        NOT NULL,
     comment       TEXT        NOT NULL,
+    created_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     started_at    TIMESTAMPTZ NOT NULL,
     finished_at   TIMESTAMPTZ NOT NULL,
-    created_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 
     FOREIGN KEY (assignment_id) REFERENCES time_trackers.assignments (id)
 );
